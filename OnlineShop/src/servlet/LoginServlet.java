@@ -1,5 +1,5 @@
-package cn.yiliedu.servlet;
-import cn.yiliedu.util.JDBCUtils;
+package servlet;
+import util.JDBCUtils;
 import com.mysql.cj.util.StringUtils;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
