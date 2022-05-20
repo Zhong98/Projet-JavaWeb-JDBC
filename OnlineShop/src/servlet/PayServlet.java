@@ -1,6 +1,6 @@
-package cn.yiliedu.servlet;
+package servlet;
 
-import cn.yiliedu.util.JDBCUtils;
+import util.JDBCUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
