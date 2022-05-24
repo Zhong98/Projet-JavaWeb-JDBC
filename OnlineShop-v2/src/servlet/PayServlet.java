@@ -91,15 +91,13 @@ public class PayServlet extends HttpServlet {
 
 
                                 //Get the user's transaction record for the day, and get the remaining consumption limit today
-                                int moneySpent = 0;
-                                String sql6 = "select totalPrice from sale_log where customerId=? and `date`=?";
+                                String sql6 = "select SUM(totalPrice) from sale_log where customerId=? and `date`=?";
                                 preparedStatement6 = connection.prepareStatement(sql6);
                                 preparedStatement6.setInt(1, clientId);
                                 preparedStatement6.setString(2, today);
                                 ResultSet resultSet3 = preparedStatement6.executeQuery();
-                                while (resultSet3.next()) {
-                                    moneySpent += resultSet3.getInt(1);
-                                }
+                                int moneySpent += resultSet3.getInt(1);
+                                
 
 
                                 //Determine whether the remaining quota for today is enough
